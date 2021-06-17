@@ -25,7 +25,7 @@ jobs:
         if-no-files-found: error
         
     - name: compress artifact for PyPi
-      run: tar -czvf /tmp/laserfiche_api.tar.gz /API_GEN/laserfiche_api
+      run: tar -czvf /tmp/laserfiche_api.tar.gz -C /API_GEN laserfiche_api
         
     - uses: actions/upload-release-asset@v1
       name: upload laserfiche_api
