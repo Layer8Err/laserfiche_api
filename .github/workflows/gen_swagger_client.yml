@@ -16,9 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Laserfiche API SDK
       run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
-        
-#     - name: Compress artifact for PyPi
-#       run: tar -czvf /tmp/laserfiche-api.tar.gz -C /API_GEN laserfiche-api
 
     - name: Create PyPi distro
       run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && python setup.py sdist
@@ -33,19 +30,17 @@ jobs:
     - name: Move PyPi package to expected location
       run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche-api/laserfiche-api/dist/.
       
+    - name: Move PyPi package to laserfiche_api folder
+      run: mv -f /tmp/laserfiche-api/. /home/runner/work/laserfiche-api/laserfiche-api/.
+      
     - name: Commit dist updates to main
-      run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f *.gz && git commit -m "GitHub action updated PyPi dist"
+      run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
       env:
         GH_EMAIL: ${{ secrets.GH_EMAIL }}
         GH_USER: ${{ secrets.GH_USER }}
         
     - uses: actions-x/commit@v2
       name: Commit new PyPi distro package
-      
-#     - uses: ad-m/github-push-action@master
-#       name: Push changes to main branch
-#       with:
-#         github_token: ${{ secrets.GH_TOKEN }}
 
     - uses: pypa/gh-action-pypi-publish@release/v1
       name: Publish to PyPi
