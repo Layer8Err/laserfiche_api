@@ -4,7 +4,7 @@
 # Get the latest URL from: https://api.laserfiche.com/repository/swagger/index.html
 SWGSPEC='https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json'
 USRAGT='Chrome/91.0.4472.106'
-LFAPI=${PWD}/laserfiche_api
+LFAPI=${PWD}/laserfiche-api
 OPWD=${PWD}
 
 if [ -d "$LFAPI" ]; then
@@ -23,18 +23,18 @@ docker run -it --rm \
     -i ${SWGSPEC} \
     --http-user-agent "$USRAGT" \
     -l python \
-    -o /local/laserfiche_api \
-    -DpackageName=laserfiche_api
+    -o /local/laserfiche-api \
+    -DpackageName=laserfiche-api
 
 # Package for PyPi
 # cd ${PWD}/../dist
 echo '' > ${PWD}/../dist/laserfiche-api.tar.gz
-tar -czvf ${PWD}/../dist/laserfiche-api.tar.gz -C ${PWD} laserfiche_api
+tar -czvf ${PWD}/../dist/laserfiche-api.tar.gz -C ${PWD} laserfiche-api
 
 
 # Add package to repo
 
-git add -f ${PWD}/../dist/laserfiche_api.tar.gz
+git add -f ${PWD}/../dist/laserfiche-api.tar.gz
 
 git commit -m "Added/updated laserfiche-api.tar.gz"
 

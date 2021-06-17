@@ -130,3 +130,6 @@ dmypy.json
 
 # laserfiche_api build folder
 /API_GEN/laserfiche_api*
+/API_GEN/laserfiche-api*
+/dist/laserfiche_api*
+/dist/laserfiche-api*
