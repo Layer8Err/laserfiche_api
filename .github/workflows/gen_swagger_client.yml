@@ -35,7 +35,6 @@ jobs:
         
     - uses: actions-x/commit@v2
       name: Push PyPi distro package to main
-      force: true
 
     - uses: pypa/gh-action-pypi-publish@release/v1
       name: Publish to PyPi
