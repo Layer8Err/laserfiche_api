@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# laserfiche_api build folder
+/API_GEN/laserfiche_api*
