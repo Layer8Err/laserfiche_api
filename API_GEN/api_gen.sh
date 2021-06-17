@@ -5,6 +5,7 @@
 SWGSPEC='https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json'
 USRAGT='Chrome/91.0.4472.106'
 LFAPI=${PWD}/laserfiche_api
+OPWD=${PWD}
 
 if [ -d "$LFAPI" ]; then
     echo "$LFAPI folder exists. Cleaning up before rebuilding..."
@@ -26,14 +27,19 @@ docker run -it --rm \
     -DpackageName=laserfiche_api
 
 # Package for PyPi
-echo '' > ${PWD}/../dist/laserfiche_api.tar.gz
-tar -czvf ${PWD}/../dist/laserfiche_api.tar.gz ${PWD}/laserfiche_api
+# cd ${PWD}/../dist
+echo '' > ${PWD}/../dist/laserfiche-api.tar.gz
+tar -czvf ${PWD}/../dist/laserfiche-api.tar.gz -C ${PWD} laserfiche_api
 
 
 # Add package to repo
 
 git add -f ${PWD}/../dist/laserfiche_api.tar.gz
 
-git commit -m "Added/updated laserfiche_api.tar.gz"
+git commit -m "Added/updated laserfiche-api.tar.gz"
 
 git push
+
+#pip install twine
+#python setup.py sdist
+#twine upload laserfiche-api.tar.gz
