@@ -32,6 +32,7 @@ jobs:
         upload_url: https://github.com/Layer8Err/laserfiche_api/dist
         artifact: laserfiche_api
         asset_content_type: application/zip
+        asset_path: /dist/
         
 #     - uses: actions/create-release@v1
 #       name: Create release
