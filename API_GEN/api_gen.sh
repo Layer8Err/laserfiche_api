@@ -29,10 +29,11 @@ docker run -it --rm \
 echo '' > ${PWD}/../dist/laserfiche_api.tar.gz
 tar -czvf ${PWD}/../dist/laserfiche_api.tar.gz ${PWD}/laserfiche_api
 
-# Commit package to repo
 
-git add ${PWD}/../dist/laserfiche_api.tar.gz
+# Add package to repo
+
+git add -f ${PWD}/../dist/laserfiche_api.tar.gz
 
 git commit -m "Added/updated laserfiche_api.tar.gz"
 
-#git push
+git push
