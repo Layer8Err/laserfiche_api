@@ -34,7 +34,10 @@ jobs:
       run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche_api/laserfiche_api/dist/.
       
     - name: Commit dist updates to main
-      run: git config --global user.email ${{ GH_EMAIL }} && git config --global user.name ${{ GH_USER }} && git add -f *.gz && git commit -m "GitHub action updated PyPi dist"
+      run: git config --global user.email $GH_EMAIL && git config --global user.name $GH_USER && git add -f *.gz && git commit -m "GitHub action updated PyPi dist"
+      env:
+        GH_EMAIL: ${{ GH_EMAIL }}
+        GH_USER: ${{ GH_USER }}
         
     - uses: actions-x/commit@v2
       name: Commit new PyPi distro package
