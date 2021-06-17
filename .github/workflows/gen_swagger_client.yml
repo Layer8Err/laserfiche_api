@@ -17,29 +17,27 @@ jobs:
     - name: Build the Laserfiche API SDK
       run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
         
-    - name: Compress artifact for PyPi
-      run: tar -czvf /tmp/laserfiche-api.tar.gz -C /API_GEN laserfiche-api
-      
+#     - name: Compress artifact for PyPi
+#       run: tar -czvf /tmp/laserfiche-api.tar.gz -C /API_GEN laserfiche-api
+
+    - name: Create PyPi distro
+      run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && python setup.py sdist
+
     - uses: actions/upload-artifact@v2
-      name: Save artifact
+      name: Save PyPi distro artifact
       with: 
         name: laserfiche-api
-        path: /tmp/laserfiche-api.tar.gz
+        path: /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz
         if-no-files-found: error
-                
-#     - uses: actions/create-release@v1
-#       name: Create release
-#       with:
-#         draft: false
-#         prerelease: false
-#         release_name: latest
-#         tag_name: ${{ github.ref }}
-#         body_
-      
-    
+        
+    - name: Move PyPi package to expected location
+      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche_api/laserfiche_api/dist/.
+        
+    - uses: actions-x/commit@v2
+      name: Push PyPi distro package to main
+
     - uses: pypa/gh-action-pypi-publish@release/v1
       name: Publish to PyPi
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
-
