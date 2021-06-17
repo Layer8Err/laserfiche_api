@@ -31,7 +31,7 @@ jobs:
         if-no-files-found: error
         
     - name: Move PyPi package to expected location
-      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche_api/dist/.
+      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche_api/laserfiche_api/dist/.
         
     - uses: actions-x/commit@v2
       name: Push PyPi distro package to main
