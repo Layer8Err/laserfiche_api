@@ -30,7 +30,7 @@ jobs:
     - uses: actions/upload-release-asset@v1
       name: upload laserfiche_api
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       with:
         upload_url: https://github.com/Layer8Err/laserfiche_api/dist
         asset_content_type: application/gzip
