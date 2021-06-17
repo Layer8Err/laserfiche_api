@@ -22,23 +22,6 @@ jobs:
 
     - name: Create PyPi distro
       run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && python setup.py sdist
-                
-#     - uses: actions/create-release@v1
-#       name: Create release
-#       with:
-#         draft: false
-#         prerelease: false
-#         release_name: latest
-#         tag_name: ${{ github.ref }}
-#         body_
-          
-    - uses: pypa/gh-action-pypi-publish@release/v1
-      name: Publish to PyPi
-      with:
-        user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
-        packages_dir: /tmp/laserfiche-api/dist/
-
 
     - uses: actions/upload-artifact@v2
       name: Save PyPi distro artifact
@@ -46,4 +29,16 @@ jobs:
         name: laserfiche-api
         path: /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz
         if-no-files-found: error
+        
+    - name: Move PyPi package to expected location
+      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz ./dist/.
+        
+    - uses: actions-x/commit@v2
+      name: Push PyPi distro package to main
+      force: true
 
+    - uses: pypa/gh-action-pypi-publish@release/v1
+      name: Publish to PyPi
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
