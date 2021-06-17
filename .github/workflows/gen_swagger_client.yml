@@ -15,28 +15,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Laserfiche API SDK
-      run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche_api -DpackageName=laserfiche_api
-    
+      run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
+        
+    - name: Compress artifact for PyPi
+      run: tar -czvf /tmp/laserfiche-api.tar.gz -C /API_GEN laserfiche-api
+      
     - uses: actions/upload-artifact@v2
       name: Save artifact
       with: 
-        name: laserfiche_api
-        path: /API_GEN/laserfiche_api
+        name: laserfiche-api
+        path: /tmp/laserfiche-api.tar.gz
         if-no-files-found: error
-        
-    - name: compress artifact for PyPi
-      run: tar -czvf /tmp/laserfiche_api.tar.gz -C /API_GEN laserfiche_api
-        
-    - uses: actions/upload-release-asset@v1
-      name: upload laserfiche_api
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      with:
-        upload_url: https://github.com/Layer8Err/laserfiche_api/dist
-        asset_content_type: application/gzip
-        asset_path: /tmp/laserfiche_api.tar.gz
-        asset_name: laserfiche_api
-        
+                
 #     - uses: actions/create-release@v1
 #       name: Create release
 #       with:
@@ -47,8 +37,9 @@ jobs:
 #         body_
       
     
-#     - uses: pypa/gh-action-pypi-publish@release/v1
-#       with:
-#         user: __token__
-#         password: ${{ secrets.PYPI_API_TOKEN }}
+    - uses: pypa/gh-action-pypi-publish@release/v1
+      name: Publish to PyPi
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
 
