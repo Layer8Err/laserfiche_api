@@ -30,8 +30,8 @@ jobs:
     - name: Move PyPi package to expected location
       run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche-api/laserfiche-api/dist/.
       
-    - name: Move PyPi package to laserfiche_api folder
-      run: mv -f /tmp/laserfiche-api/. /home/runner/work/laserfiche-api/laserfiche-api/.
+    - name: Move PyPi package to laserfiche-api folder
+      run: cp -rf /tmp/laserfiche-api/. /home/runner/work/laserfiche-api/laserfiche-api/.
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
