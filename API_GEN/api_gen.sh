@@ -24,3 +24,15 @@ docker run -it --rm \
     -l python \
     -o /local/laserfiche_api \
     -DpackageName=laserfiche_api
+
+# Package for PyPi
+echo '' > ${PWD}/../dist/laserfiche_api.tar.gz
+tar -czvf ${PWD}/../dist/laserfiche_api.tar.gz ${PWD}/laserfiche_api
+
+# Commit package to repo
+
+git add ${PWD}/../dist/laserfiche_api.tar.gz
+
+git commit -m "Added/updated laserfiche_api.tar.gz"
+
+#git push
