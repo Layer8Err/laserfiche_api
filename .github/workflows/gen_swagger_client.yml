@@ -38,6 +38,9 @@ jobs:
     - name: Create PyPi distro
       run: cd /tmp/laserfiche-api && python setup.py sdist
 
+    - name: Prep /dist folder
+      run: rm $GITHUB_WORKSPACE/dist/*.tar.gz && cp /tmp/laserfiche-api/dist/*.tar.gz $GITHUB_WORKSPACE/dist/.
+
     - uses: actions/upload-artifact@v2
       name: Save PyPi distro artifact
       with: 
