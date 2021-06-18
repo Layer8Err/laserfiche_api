@@ -17,21 +17,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Laserfiche API SDK
       run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
-
-    # - name: Create PyPi distro
-    #   run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && cp /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/setup.py /tmp/laserfiche-api/setup.py && python /tmp/laserfiche-api/setup.py sdist
-    #   env:
-    #     VERSION: ${{ secrets.VERSION }}
-
-    # - name: Create PyPi distro
-    #   run: chmod +x $CREATEDIST && .$CREATEDIST
-    #   env:
-    #     CREATEDIST: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
-
-    # - name: Try running setup again
-    #   run: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
-
-    
+   
     - name: Copy over setup.py
       run: sudo cp -f $GITHUB_WORKSPACE/API_GEN/setup.py /API_GEN/laserfiche-api/setup.py && cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api
 
@@ -49,13 +35,13 @@ jobs:
         if-no-files-found: error
         
     - name: Move PyPi package to expected location
-      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz /home/runner/work/laserfiche-api/laserfiche-api/dist/.
+      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz $GITHUB_WORKSPACE/dist/.
       
     - name: Move PyPi docs to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche-api/docs/. /home/runner/work/laserfiche-api/laserfiche-api/docs/.
+      run: cp -rf /tmp/laserfiche-api/docs/. $GITHUB_WORKSPACE/docs/.
       
     - name: Move API Source code to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche-api/laserfiche-api /home/runner/work/laserfiche-api/laserfiche-api/laserfiche_api/.
+      run: cp -rf /tmp/laserfiche-api/laserfiche-api $GITHUB_WORKSPACE/laserfiche_api/.
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
