@@ -23,7 +23,7 @@ jobs:
     #     VERSION: ${{ secrets.VERSION }}
 
     - name: Create PyPi distro
-      run: cp /home/runner/work/laserfiche-api/API_GEN/create_dist.sh /tmp/create_dist.sh && chmod +x /tmp/create_dist.sh && ./tmp/create_dist.sh
+      run: cp /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh /tmp/create_dist.sh && chmod +x /tmp/create_dist.sh && ./tmp/create_dist.sh
 
     - uses: actions/upload-artifact@v2
       name: Save PyPi distro artifact
