@@ -1,4 +1,4 @@
-# laserfiche-api.AccessTokensApi
+# laserfiche_api.AccessTokensApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -19,15 +19,15 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.AccessTokensApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.AccessTokensApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
-body = laserfiche-api.CreateConnectionRequest() # CreateConnectionRequest | The username and password used to create the session connection. (optional)
+body = laserfiche_api.CreateConnectionRequest() # CreateConnectionRequest | The username and password used to create the session connection. (optional)
 create_cookie = true # bool | An optional query parameter used to indicate whether a Set-Cookie header containing             the authToken is returned in the response. (optional)
 customer_id = 'customer_id_example' # str | The Laserfiche Cloud account ID to use when using username and password to create a session connection. (optional)
 
@@ -73,13 +73,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.AccessTokensApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.AccessTokensApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 
 try:
@@ -121,13 +121,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.AccessTokensApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.AccessTokensApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 keep_alive = 'keep_alive_example' # str | An optional Keep-Alive header with timeout value can be used to specify how long the             session should be kept alive when idle. The maximum timeout value is 1 hour. (optional)
 

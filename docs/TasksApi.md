@@ -1,4 +1,4 @@
-# laserfiche-api.TasksApi
+# laserfiche_api.TasksApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -18,13 +18,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TasksApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TasksApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 operation_token = 'operation_token_example' # str | The operation token 
 
@@ -67,13 +67,13 @@ void (empty response body)
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TasksApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TasksApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 operation_token = 'operation_token_example' # str | The operation token.
 

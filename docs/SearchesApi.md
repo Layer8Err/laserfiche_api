@@ -1,4 +1,4 @@
-# laserfiche-api.SearchesApi
+# laserfiche_api.SearchesApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -21,13 +21,13 @@ Cancel or close an advanced search.
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.SearchesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.SearchesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 search_token = 'search_token_example' # str | The requested searchToken.
 
@@ -72,15 +72,15 @@ Run a search in the specified repository.
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.SearchesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.SearchesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
-body = laserfiche-api.AdvancedSearchRequest() # AdvancedSearchRequest | The Laserfiche search command to run, optionally include fuzzy search settings. (optional)
+body = laserfiche_api.AdvancedSearchRequest() # AdvancedSearchRequest | The Laserfiche search command to run, optionally include fuzzy search settings. (optional)
 
 try:
     # Run a search in the specified repository.
@@ -123,13 +123,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.SearchesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.SearchesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 search_token = 'search_token_example' # str | The requested searchToken.
 row_number = 56 # int | The search result listing row number to get context hits for.
@@ -187,13 +187,13 @@ Get the search results listing of a search.
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.SearchesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.SearchesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 search_token = 'search_token_example' # str | The requested searchToken.
 group_by_entry_type = true # bool | An optional query parameter used to indicate if the result should be grouped by entry type or not. (optional)
@@ -254,13 +254,13 @@ Get the status of a search using a token.
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.SearchesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.SearchesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 search_token = 'search_token_example' # str | The requested searchToken.
 

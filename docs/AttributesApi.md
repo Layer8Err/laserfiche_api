@@ -1,4 +1,4 @@
-# laserfiche-api.AttributesApi
+# laserfiche_api.AttributesApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -18,13 +18,13 @@ Get the attribute key value pairs associated with the authenticated user.
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.AttributesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.AttributesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 everyone = true # bool | Boolean value that indicates whether to return attributes key value pairs associated with everyone or the currently authenticated user. (optional)
 select = 'select_example' # str | Limits the properties returned in the result. (optional)
@@ -75,13 +75,13 @@ Get an attribute object by key associated with the authenticated user.
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.AttributesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.AttributesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 attribute_key = 'attribute_key_example' # str | The requested attribute key.
 everyone = true # bool | Boolean value that indicates whether to return attributes associated with everyone or the currently authenticated user. (optional)

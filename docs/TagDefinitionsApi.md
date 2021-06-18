@@ -1,4 +1,4 @@
-# laserfiche-api.TagDefinitionsApi
+# laserfiche_api.TagDefinitionsApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -18,13 +18,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TagDefinitionsApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TagDefinitionsApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 tag_id = 56 # int | The requested tag definition ID.
 
@@ -68,13 +68,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TagDefinitionsApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TagDefinitionsApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 prefer = 'prefer_example' # str | An optional OData header. Can be used to set the maximum page size using odata.maxpagesize. (optional)
 select = 'select_example' # str | Limits the properties returned in the result. (optional)

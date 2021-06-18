@@ -1,4 +1,4 @@
-# laserfiche-api.EntriesApi
+# laserfiche_api.EntriesApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -35,16 +35,16 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The request repository ID.
 entry_id = 56 # int | The requested entry ID.
-body = [laserfiche-api.PutLinksRequest()] # list[PutLinksRequest] |  (optional)
+body = [laserfiche_api.PutLinksRequest()] # list[PutLinksRequest] |  (optional)
 
 try:
     api_response = api_instance.assign_entry_links(repo_id, entry_id, body=body)
@@ -87,13 +87,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The entry ID of the entry that will have its fields updated.
 body = NULL # dict(str, FieldToUpdate) |  (optional)
@@ -139,16 +139,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The requested entry ID.
-body = laserfiche-api.PutTagRequest() # PutTagRequest | The tags to add. (optional)
+body = laserfiche_api.PutTagRequest() # PutTagRequest | The tags to add. (optional)
 
 try:
     api_response = api_instance.assign_tags(repo_id, entry_id, body=body)
@@ -191,16 +191,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The folder id that the entry will be created in.
-body = laserfiche-api.CopyAsyncRequest() # CopyAsyncRequest | Copy entry request. (optional)
+body = laserfiche_api.CopyAsyncRequest() # CopyAsyncRequest | Copy entry request. (optional)
 auto_rename = true # bool | An optional query parameter used to indicate if the new entry should be automatically             renamed if an entry already exists with the given name in the folder. The default value is false. (optional)
 
 try:
@@ -245,16 +245,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The folder id that the entry will be created in.
-body = laserfiche-api.PostEntryChildrenRequest() # PostEntryChildrenRequest | The entry to create. (optional)
+body = laserfiche_api.PostEntryChildrenRequest() # PostEntryChildrenRequest | The entry to create. (optional)
 auto_rename = true # bool | An optional query parameter used to indicate if the new entry should be automatically             renamed if an entry already exists with the given name in the folder. The default value is false. (optional)
 
 try:
@@ -299,13 +299,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The id of the entry that will have its template removed.
 
@@ -349,16 +349,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The requested entry ID.
-body = laserfiche-api.DeleteEntryWithAuditReason() # DeleteEntryWithAuditReason |  (optional)
+body = laserfiche_api.DeleteEntryWithAuditReason() # DeleteEntryWithAuditReason |  (optional)
 
 try:
     api_response = api_instance.delete_entry_info(repo_id, entry_id, body=body)
@@ -401,13 +401,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The requested document id.
 range = 'range_example' # str | An optional header used to retrieve partial content of the edoc. Only supports single             range with byte unit. (optional)
@@ -453,16 +453,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The requested document id.
-body = laserfiche-api.GetEdocWithAuditReasonRequest() # GetEdocWithAuditReasonRequest |  (optional)
+body = laserfiche_api.GetEdocWithAuditReasonRequest() # GetEdocWithAuditReasonRequest |  (optional)
 range = 'range_example' # str | An optional header used to retrieve partial content of the edoc. Only supports single             range with byte unit. (optional)
 
 try:
@@ -507,13 +507,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The requested document id.
 
@@ -556,16 +556,16 @@ void (empty response body)
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The requested entry id.
-body = laserfiche-api.GetDynamicFieldLogicValueRequest() # GetDynamicFieldLogicValueRequest |  (optional)
+body = laserfiche_api.GetDynamicFieldLogicValueRequest() # GetDynamicFieldLogicValueRequest |  (optional)
 
 try:
     api_response = api_instance.get_dynamic_field_values(repo_id, entry_id, body=body)
@@ -608,13 +608,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The requested entry ID.
 select = 'select_example' # str | Limits the properties returned in the result. (optional)
@@ -660,13 +660,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The folder ID.
 group_by_entry_type = true # bool | An optional query parameter used to indicate if the result should be grouped by entry type or not. (optional)
@@ -724,13 +724,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The requested entry ID.
 prefer = 'prefer_example' # str | An optional OData header. Can be used to set the maximum page size using odata.maxpagesize. (optional)
@@ -790,13 +790,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The requested entry id.
 prefer = 'prefer_example' # str | An optional odata header. Can be used to set the maximum page size using odata.maxpagesize. (optional)
@@ -852,13 +852,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The requested entry ID.
 prefer = 'prefer_example' # str | An optional OData header. Can be used to set the maximum page size using odata.maxpagesize. (optional)
@@ -914,18 +914,18 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 parent_entry_id = 56 # int | The entry ID of the folder that the document will be created in.
 file_name = 'file_name_example' # str | The created document's file name.
 electronic_document = 'electronic_document_example' # str |  (optional)
-request = laserfiche-api.PostEntryWithEdocMetadataRequest() # PostEntryWithEdocMetadataRequest |  (optional)
+request = laserfiche_api.PostEntryWithEdocMetadataRequest() # PostEntryWithEdocMetadataRequest |  (optional)
 auto_rename = true # bool | An optional query parameter used to indicate if the new document should be automatically             renamed if an entry already exists with the given name in the folder. The default value is false. (optional)
 
 try:
@@ -972,16 +972,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 entry_id = 56 # int | The requested entry ID.
-body = laserfiche-api.PatchEntryRequest() # PatchEntryRequest | The request containing the folder ID that the entry will be moved to and the new name
+body = laserfiche_api.PatchEntryRequest() # PatchEntryRequest | The request containing the folder ID that the entry will be moved to and the new name
             the entry will be renamed to. (optional)
 auto_rename = true # bool | An optional query parameter used to indicate if the entry should be automatically             renamed if another entry already exists with the same name in the folder. The default value is false. (optional)
 
@@ -1028,16 +1028,16 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.EntriesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.EntriesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository id.
 entry_id = 56 # int | The id of entry that will have its template updated.
-body = laserfiche-api.PutTemplateRequest() # PutTemplateRequest | The template and template fields that will be assigned to the entry. (optional)
+body = laserfiche_api.PutTemplateRequest() # PutTemplateRequest | The template and template fields that will be assigned to the entry. (optional)
 
 try:
     api_response = api_instance.write_template_value_to_entry(repo_id, entry_id, body=body)

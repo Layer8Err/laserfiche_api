@@ -1,4 +1,4 @@
-# laserfiche-api.SimpleSearchesApi
+# laserfiche_api.SimpleSearchesApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -17,15 +17,15 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.SimpleSearchesApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.SimpleSearchesApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
-body = laserfiche-api.SimpleSearchRequest() # SimpleSearchRequest | The Laserfiche search command to run. (optional)
+body = laserfiche_api.SimpleSearchRequest() # SimpleSearchRequest | The Laserfiche search command to run. (optional)
 
 try:
     api_response = api_instance.create_simple_search_operation(repo_id, body=body)

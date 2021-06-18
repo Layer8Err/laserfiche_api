@@ -1,4 +1,4 @@
-# laserfiche-api.TemplateDefinitionsApi
+# laserfiche_api.TemplateDefinitionsApi
 
 All URIs are relative to *https://api.laserfiche.com/repository*
 
@@ -19,13 +19,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TemplateDefinitionsApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TemplateDefinitionsApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 template_id = 56 # int | The requested template definition ID.
 
@@ -69,13 +69,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TemplateDefinitionsApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TemplateDefinitionsApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 prefer = 'prefer_example' # str | An optional OData header. Can be used to set the maximum page size using odata.maxpagesize. (optional)
 select = 'select_example' # str | Limits the properties returned in the result. (optional)
@@ -129,13 +129,13 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import laserfiche-api
-from laserfiche-api.rest import ApiException
+import laserfiche_api
+from laserfiche_api.rest import ApiException
 from pprint import pprint
 
 
 # create an instance of the API class
-api_instance = laserfiche-api.TemplateDefinitionsApi(laserfiche-api.ApiClient(configuration))
+api_instance = laserfiche_api.TemplateDefinitionsApi(laserfiche_api.ApiClient(configuration))
 repo_id = 'repo_id_example' # str | The requested repository ID.
 template_id = 56 # int | The requested template definition ID.
 prefer = 'prefer_example' # str | An optional OData header. Can be used to set the maximum page size using odata.maxpagesize. (optional)
