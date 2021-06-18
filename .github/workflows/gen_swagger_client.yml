@@ -14,9 +14,9 @@ jobs:
 
     steps:
 
-    # - uses: actions/checkout@v2
-    # - name: Build the Laserfiche API SDK
-    #   run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
+    - uses: actions/checkout@v2
+    - name: Build the Laserfiche API SDK
+      run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
 
     # - name: Create PyPi distro
     #   run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && cp /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/setup.py /tmp/laserfiche-api/setup.py && python /tmp/laserfiche-api/setup.py sdist
@@ -31,8 +31,12 @@ jobs:
     # - name: Try running setup again
     #   run: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
 
-    - name: Try running setup again 2
-      run: $GITHUB_WORKSPACE/API_GEN/create_dist.sh
+    
+    - name: Copy over setup.py
+      run: cp -f $GITHUB_WORKSPACE/API_GEN/setup.py.sh /API_GEN/laserfiche-api/setup.py && cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api
+
+    - name: Create PyPi distro
+      run: cd /tmp/laserfiche-api && python setup.py sdist
 
     - uses: actions/upload-artifact@v2
       name: Save PyPi distro artifact
