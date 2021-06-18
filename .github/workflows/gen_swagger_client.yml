@@ -18,7 +18,7 @@ jobs:
       run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche-api
 
     - name: Create PyPi distro
-      run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && python setup.py sdist
+      run: cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api && cd /tmp/laserfiche-api && sed -i s/1.0.0/${{ secrets.VERSION }}/g setup.py && python setup.py sdist
 
     - uses: actions/upload-artifact@v2
       name: Save PyPi distro artifact
@@ -32,6 +32,9 @@ jobs:
       
     - name: Move PyPi docs to laserfiche-api folder
       run: cp -rf /tmp/laserfiche-api/docs/. /home/runner/work/laserfiche-api/laserfiche-api/docs/.
+      
+    - name: Move API Source code to laserfiche-api folder
+      run: cp -rf /tmp/laserfiche-api/laserfiche-api/. /home/runner/work/laserfiche-api/laserfiche-api/laserfiche-api/.
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
