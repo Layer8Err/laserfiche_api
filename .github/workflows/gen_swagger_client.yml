@@ -28,11 +28,11 @@ jobs:
     #   env:
     #     CREATEDIST: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
 
-    - name: Try running setup again
-      run: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
+    # - name: Try running setup again
+    #   run: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
 
-    # - name: Try running setup again 2
-    #   run: $GITHUB_WORKSPACE/API_GEN/create_dist.sh
+    - name: Try running setup again 2
+      run: $GITHUB_WORKSPACE/API_GEN/create_dist.sh
 
     - uses: actions/upload-artifact@v2
       name: Save PyPi distro artifact
