@@ -1,11 +1,13 @@
 #!/bin/bash
 # Generage Python SDK library for interacting with Laserfiche API
+# Requires Python and "pip3 install twine"
 
 # Get the latest URL from: https://api.laserfiche.com/repository/swagger/index.html
 SWGSPEC='https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json'
 USRAGT='Chrome/91.0.4472.106'
 LFAPI=${PWD}/laserfiche-api
 OPWD=${PWD}
+TGTVER='1.0.2'
 
 if [ -d "$LFAPI" ]; then
     echo "$LFAPI folder exists. Cleaning up before rebuilding..."
@@ -24,21 +26,28 @@ docker run -it --rm \
     --http-user-agent "$USRAGT" \
     -l python \
     -o /local/laserfiche-api \
-    -DpackageName=laserfiche-api
+    -DpackageName=laserfiche_api
 
 # Package for PyPi
 # cd ${PWD}/../dist
-echo '' > ${PWD}/../dist/laserfiche-api.tar.gz
-tar -czvf ${PWD}/../dist/laserfiche-api.tar.gz -C ${PWD} laserfiche-api
+#echo '' > ${PWD}/../dist/laserfiche-api.tar.gz
+#tar -czvf ${PWD}/../dist/laserfiche-api.tar.gz -C ${PWD} laserfiche-api
 
+cd ${PWD}/laserfiche-api
+
+# Set the target version
+sed -i s/1.0.0/$TGTVER/g setup.py
+
+# Create dist
+python setup.py sdist
 
 # Add package to repo
 
-git add -f ${PWD}/../dist/laserfiche-api.tar.gz
+#git add -f ${PWD}/../dist/laserfiche-api*.tar.gz
 
-git commit -m "Added/updated laserfiche-api.tar.gz"
+#git commit -m "Added/updated laserfiche-api*.tar.gz"
 
-git push
+#git push
 
 #pip install twine
 #python setup.py sdist
