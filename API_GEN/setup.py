@@ -12,6 +12,11 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 NAME = "laserfiche_api"
 VERSION = "1.0.6"
 # To install the library, run the following
@@ -34,12 +39,5 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description_content_type="text/markdown",
-    long_description="""\
-    #Laserfiche Swagger API.
-
-    This package is generated using GitHub Actions.
-     
-    You can use this package for API calls against your live Laserfiche Cloud account. 
-    Visit the [developer center](https://developer.laserfiche.com) for more details.
-    """
+    long_description=long_description
 )
