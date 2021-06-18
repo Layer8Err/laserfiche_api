@@ -27,12 +27,12 @@ jobs:
     - name: Prep /dist folder
       run: rm $GITHUB_WORKSPACE/dist/*.tar.gz && cp /tmp/laserfiche-api/dist/*.tar.gz $GITHUB_WORKSPACE/dist/.
 
-    - uses: actions/upload-artifact@v2
-      name: Save PyPi distro artifact
-      with: 
-        name: laserfiche-api
-        path: /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz
-        if-no-files-found: error
+#     - uses: actions/upload-artifact@v2
+#       name: Save PyPi distro artifact
+#       with: 
+#         name: laserfiche-api
+#         path: /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz
+#         if-no-files-found: error
         
     - name: Move PyPi package to expected location
       run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz $GITHUB_WORKSPACE/dist/.
