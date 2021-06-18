@@ -35,7 +35,7 @@ jobs:
 #         if-no-files-found: error
         
     - name: Move PyPi package to expected location
-      run: mv /tmp/laserfiche_api/dist/laserfiche-api*.tar.gz $GITHUB_WORKSPACE/dist/.
+      run: mv /tmp/laserfiche_api/dist/laserfiche*api*.tar.gz $GITHUB_WORKSPACE/dist/.
       
     - name: Move PyPi docs to laserfiche-api folder
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
