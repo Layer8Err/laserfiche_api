@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "laserfiche-api"
-VERSION = "1.0.3"
+VERSION = "1.0.4"
 # To install the library, run the following
 #
 # python setup.py install
@@ -28,12 +28,12 @@ setup(
     version=VERSION,
     description="Laserfiche API",
     author_email="",
-    url="",
+    url="https://api.laserfiche.com/repository/swagger/index.html",
     keywords=["Swagger", "Laserfiche API"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: &lt;a href&#x3D;\&quot;https://developer.laserfiche.com\&quot;&gt;https://developer.laserfiche.com&lt;/a&gt;&lt;p&gt;&lt;strong&gt;Build# : &lt;/strong&gt;561590&lt;/p&gt;  # noqa: E501
+    Laserfiche Swagger API. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: developer.laserfiche.com
     """
 )
