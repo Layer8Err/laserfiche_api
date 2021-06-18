@@ -33,7 +33,7 @@ jobs:
 
     
     - name: Copy over setup.py
-      run: cp -f $GITHUB_WORKSPACE/API_GEN/setup.py.sh /API_GEN/laserfiche-api/setup.py && cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api
+      run: cp -f $GITHUB_WORKSPACE/API_GEN/setup.py /API_GEN/laserfiche-api/setup.py && cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api
 
     - name: Create PyPi distro
       run: cd /tmp/laserfiche-api && python setup.py sdist
