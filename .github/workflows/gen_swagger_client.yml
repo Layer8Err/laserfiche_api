@@ -23,10 +23,10 @@ jobs:
     #   env:
     #     VERSION: ${{ secrets.VERSION }}
 
-    - name: Create PyPi distro
-      run: ls -R /home/runner/work/ && chmod +x $CREATEDIST && .$CREATEDIST
-      env:
-        CREATEDIST: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
+    # - name: Create PyPi distro
+    #   run: chmod +x $CREATEDIST && .$CREATEDIST
+    #   env:
+    #     CREATEDIST: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
 
     - name: Try running setup again
       run: /home/runner/work/laserfiche-api/laserfiche-api/API_GEN/create_dist.sh
