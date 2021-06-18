@@ -16,16 +16,16 @@ jobs:
 
     - uses: actions/checkout@v2
     - name: Build the Laserfiche API SDK
-      run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche-api -DpackageName=laserfiche_api
+      run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche_api -DpackageName=laserfiche_api
    
     - name: Copy over setup.py
-      run: sudo cp -f $GITHUB_WORKSPACE/API_GEN/setup.py /API_GEN/laserfiche-api/setup.py && cp -r /API_GEN/laserfiche-api /tmp/laserfiche-api
+      run: sudo cp -f $GITHUB_WORKSPACE/API_GEN/setup.py /API_GEN/laserfiche_api/setup.py && cp -r /API_GEN/laserfiche_api /tmp/laserfiche_api
 
     - name: Create PyPi distro
-      run: cd /tmp/laserfiche-api && python setup.py sdist
+      run: cd /tmp/laserfiche_api && python setup.py sdist
 
     - name: Prep /dist folder
-      run: rm $GITHUB_WORKSPACE/dist/*.tar.gz && cp /tmp/laserfiche-api/dist/*.tar.gz $GITHUB_WORKSPACE/dist/.
+      run: rm $GITHUB_WORKSPACE/dist/*.tar.gz && cp /tmp/laserfiche_api/dist/*.tar.gz $GITHUB_WORKSPACE/dist/.
 
 #     - uses: actions/upload-artifact@v2
 #       name: Save PyPi distro artifact
@@ -35,13 +35,13 @@ jobs:
 #         if-no-files-found: error
         
     - name: Move PyPi package to expected location
-      run: mv /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz $GITHUB_WORKSPACE/dist/.
+      run: mv /tmp/laserfiche_api/dist/laserfiche-api*.tar.gz $GITHUB_WORKSPACE/dist/.
       
     - name: Move PyPi docs to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche-api/docs/. $GITHUB_WORKSPACE/docs/.
+      run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
       
     - name: Move API Source code to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche-api/laserfiche_api $GITHUB_WORKSPACE/laserfiche_api/.
+      run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/laserfiche_api/.
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
