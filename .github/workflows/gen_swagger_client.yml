@@ -23,7 +23,7 @@ jobs:
 
     - name: Set VERSION from setup.py
       run: |
-        echo ::set-output name=VERSION::$( cat $GITHUB_WORKSPACE/API_GEN/setup.py | grep "VERSION =" | sed -e 's/ //g' | cut -d "=" -f2 )
+        VERSION=$( cat $GITHUB_WORKSPACE/API_GEN/setup.py | grep "VERSION =" | sed -e 's/ //g' | cut -d "=" -f2 ) && echo "VERSION=$( cat $GITHUB_WORKSPACE/API_GEN/setup.py | grep \"VERSION =\" | sed -e 's/ //g' | cut -d \"=\" -f2 )" >> $GITHUB_ENV
 
     - name: Create PyPi distro
       run: cd /tmp/laserfiche_api && python setup.py sdist
@@ -45,9 +45,7 @@ jobs:
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
 
     - name: Fixup auto-generated README.md for laserfiche-api docs
-      run: cd /tmp && sudo sed -i 's/(docs\//(/g' README.md && sudo sed -i 's/GIT_USER_ID/Layer8Err/g' README.md && sudo sed -i 's/GIT_REPO_ID/laserfiche_api/g' README.md && sudo sed -i s/1.0.0/${{ env.VERSION }}/g README.md
-      env:
-        VERSION: ${{ env.VERSION }}
+      run: cd /tmp && sudo sed -i 's/(docs\//(/g' README.md && sudo sed -i 's/GIT_USER_ID/Layer8Err/g' README.md && sudo sed -i 's/GIT_REPO_ID/laserfiche_api/g' README.md && VERSION=${{ env.VERSION }} && sudo sed -i s/1.0.0/$VERSION/g README.md
 
     - name: Move API Source code to laserfiche-api folder
       run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/. && cp -rf /tmp/README.md $GITHUB_WORKSPACE/docs/.
