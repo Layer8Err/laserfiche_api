@@ -95,126 +95,126 @@ All URIs are relative to *https://api.laserfiche.com/repository*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccessTokensApi* | [**create_access_token**](docs/AccessTokensApi.md#create_access_token) | **POST** /v1-alpha/Repositories/{repoId}/AccessTokens/Create | 
-*AccessTokensApi* | [**invalidate_access_token**](docs/AccessTokensApi.md#invalidate_access_token) | **POST** /v1-alpha/Repositories/{repoId}/AccessTokens/Invalidate | 
-*AccessTokensApi* | [**refresh_access_token**](docs/AccessTokensApi.md#refresh_access_token) | **POST** /v1-alpha/Repositories/{repoId}/AccessTokens/Refresh | 
-*AttributesApi* | [**get_trustee_attribute_key_value_pairs**](docs/AttributesApi.md#get_trustee_attribute_key_value_pairs) | **GET** /v1-alpha/Repositories/{repoId}/Attributes | Get the attribute key value pairs associated with the authenticated user.
-*AttributesApi* | [**get_trustee_attribute_value_by_key**](docs/AttributesApi.md#get_trustee_attribute_value_by_key) | **GET** /v1-alpha/Repositories/{repoId}/Attributes/{attributeKey} | Get an attribute object by key associated with the authenticated user.
-*AuditReasonsApi* | [**get_audit_reasons**](docs/AuditReasonsApi.md#get_audit_reasons) | **GET** /v1-alpha/Repositories/{repoId}/AuditReasons | Get the audit reasons associated with the authenticated user.
-*EntriesApi* | [**assign_entry_links**](docs/EntriesApi.md#assign_entry_links) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/links | 
-*EntriesApi* | [**assign_field_values**](docs/EntriesApi.md#assign_field_values) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/fields | 
-*EntriesApi* | [**assign_tags**](docs/EntriesApi.md#assign_tags) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/tags | 
-*EntriesApi* | [**copy_entry_async**](docs/EntriesApi.md#copy_entry_async) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Folder/CopyAsync | 
-*EntriesApi* | [**create_or_copy_entry**](docs/EntriesApi.md#create_or_copy_entry) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Folder/children | 
-*EntriesApi* | [**delete_assigned_template**](docs/EntriesApi.md#delete_assigned_template) | **DELETE** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/template | 
-*EntriesApi* | [**delete_entry_info**](docs/EntriesApi.md#delete_entry_info) | **DELETE** /v1-alpha/Repositories/{repoId}/Entries/{entryId} | 
-*EntriesApi* | [**export_document**](docs/EntriesApi.md#export_document) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Document/edoc | 
-*EntriesApi* | [**export_document_with_audit_reason**](docs/EntriesApi.md#export_document_with_audit_reason) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Document/GetEdocWithAuditReason | 
-*EntriesApi* | [**get_document_content_type**](docs/EntriesApi.md#get_document_content_type) | **HEAD** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Document/edoc | 
-*EntriesApi* | [**get_dynamic_field_values**](docs/EntriesApi.md#get_dynamic_field_values) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/fields/GetDynamicFieldLogicValue | 
-*EntriesApi* | [**get_entry**](docs/EntriesApi.md#get_entry) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId} | 
-*EntriesApi* | [**get_entry_listing**](docs/EntriesApi.md#get_entry_listing) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Folder/children | 
-*EntriesApi* | [**get_field_values**](docs/EntriesApi.md#get_field_values) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/fields | 
-*EntriesApi* | [**get_link_values_from_entry**](docs/EntriesApi.md#get_link_values_from_entry) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/links | 
-*EntriesApi* | [**get_tags_assigned_to_entry**](docs/EntriesApi.md#get_tags_assigned_to_entry) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/tags | 
-*EntriesApi* | [**import_document**](docs/EntriesApi.md#import_document) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{parentEntryId}/{fileName} | 
-*EntriesApi* | [**move_or_rename_document**](docs/EntriesApi.md#move_or_rename_document) | **PATCH** /v1-alpha/Repositories/{repoId}/Entries/{entryId} | 
-*EntriesApi* | [**write_template_value_to_entry**](docs/EntriesApi.md#write_template_value_to_entry) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/template | 
-*FieldDefinitionsApi* | [**get_field_definition_by_id**](docs/FieldDefinitionsApi.md#get_field_definition_by_id) | **GET** /v1-alpha/Repositories/{repoId}/FieldDefinitions/{fieldDefinitionId} | 
-*FieldDefinitionsApi* | [**get_field_definitions**](docs/FieldDefinitionsApi.md#get_field_definitions) | **GET** /v1-alpha/Repositories/{repoId}/FieldDefinitions | 
-*SearchesApi* | [**cancel_or_close_a_search**](docs/SearchesApi.md#cancel_or_close_a_search) | **DELETE** /v1-alpha/Repositories/{repoId}/Searches/{searchToken} | Cancel or close an advanced search.
-*SearchesApi* | [**create_search_operation**](docs/SearchesApi.md#create_search_operation) | **POST** /v1-alpha/Repositories/{repoId}/Searches | Run a search in the specified repository.
-*SearchesApi* | [**get_search_context_hits**](docs/SearchesApi.md#get_search_context_hits) | **GET** /v1-alpha/Repositories/{repoId}/Searches/{searchToken}/Results/{rowNumber}/ContextHits | 
-*SearchesApi* | [**get_search_results**](docs/SearchesApi.md#get_search_results) | **GET** /v1-alpha/Repositories/{repoId}/Searches/{searchToken}/Results | Get the search results listing of a search.
-*SearchesApi* | [**get_search_status**](docs/SearchesApi.md#get_search_status) | **GET** /v1-alpha/Repositories/{repoId}/Searches/{searchToken} | Get the status of a search using a token.
-*SimpleSearchesApi* | [**create_simple_search_operation**](docs/SimpleSearchesApi.md#create_simple_search_operation) | **POST** /v1-alpha/Repositories/{repoId}/SimpleSearches | 
-*TagDefinitionsApi* | [**get_tag_definition_by_id**](docs/TagDefinitionsApi.md#get_tag_definition_by_id) | **GET** /v1-alpha/Repositories/{repoId}/TagDefinitions/{tagId} | 
-*TagDefinitionsApi* | [**get_tag_definitions**](docs/TagDefinitionsApi.md#get_tag_definitions) | **GET** /v1-alpha/Repositories/{repoId}/TagDefinitions | 
-*TasksApi* | [**cancel_operation**](docs/TasksApi.md#cancel_operation) | **DELETE** /v1-alpha/Repositories/{repoId}/Tasks/{operationToken} | 
-*TasksApi* | [**get_operation_status_and_progress**](docs/TasksApi.md#get_operation_status_and_progress) | **GET** /v1-alpha/Repositories/{repoId}/Tasks/{operationToken} | 
-*TemplateDefinitionsApi* | [**get_template_definition_by_id**](docs/TemplateDefinitionsApi.md#get_template_definition_by_id) | **GET** /v1-alpha/Repositories/{repoId}/TemplateDefinitions/{templateId} | 
-*TemplateDefinitionsApi* | [**get_template_definitions**](docs/TemplateDefinitionsApi.md#get_template_definitions) | **GET** /v1-alpha/Repositories/{repoId}/TemplateDefinitions | 
-*TemplateDefinitionsApi* | [**get_template_field_definitions**](docs/TemplateDefinitionsApi.md#get_template_field_definitions) | **GET** /v1-alpha/Repositories/{repoId}/TemplateDefinitions/{templateId}/fields | 
+*AccessTokensApi* | [**create_access_token**](AccessTokensApi.md#create_access_token) | **POST** /v1-alpha/Repositories/{repoId}/AccessTokens/Create | 
+*AccessTokensApi* | [**invalidate_access_token**](AccessTokensApi.md#invalidate_access_token) | **POST** /v1-alpha/Repositories/{repoId}/AccessTokens/Invalidate | 
+*AccessTokensApi* | [**refresh_access_token**](AccessTokensApi.md#refresh_access_token) | **POST** /v1-alpha/Repositories/{repoId}/AccessTokens/Refresh | 
+*AttributesApi* | [**get_trustee_attribute_key_value_pairs**](AttributesApi.md#get_trustee_attribute_key_value_pairs) | **GET** /v1-alpha/Repositories/{repoId}/Attributes | Get the attribute key value pairs associated with the authenticated user.
+*AttributesApi* | [**get_trustee_attribute_value_by_key**](AttributesApi.md#get_trustee_attribute_value_by_key) | **GET** /v1-alpha/Repositories/{repoId}/Attributes/{attributeKey} | Get an attribute object by key associated with the authenticated user.
+*AuditReasonsApi* | [**get_audit_reasons**](AuditReasonsApi.md#get_audit_reasons) | **GET** /v1-alpha/Repositories/{repoId}/AuditReasons | Get the audit reasons associated with the authenticated user.
+*EntriesApi* | [**assign_entry_links**](EntriesApi.md#assign_entry_links) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/links | 
+*EntriesApi* | [**assign_field_values**](EntriesApi.md#assign_field_values) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/fields | 
+*EntriesApi* | [**assign_tags**](EntriesApi.md#assign_tags) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/tags | 
+*EntriesApi* | [**copy_entry_async**](EntriesApi.md#copy_entry_async) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Folder/CopyAsync | 
+*EntriesApi* | [**create_or_copy_entry**](EntriesApi.md#create_or_copy_entry) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Folder/children | 
+*EntriesApi* | [**delete_assigned_template**](EntriesApi.md#delete_assigned_template) | **DELETE** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/template | 
+*EntriesApi* | [**delete_entry_info**](EntriesApi.md#delete_entry_info) | **DELETE** /v1-alpha/Repositories/{repoId}/Entries/{entryId} | 
+*EntriesApi* | [**export_document**](EntriesApi.md#export_document) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Document/edoc | 
+*EntriesApi* | [**export_document_with_audit_reason**](EntriesApi.md#export_document_with_audit_reason) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Document/GetEdocWithAuditReason | 
+*EntriesApi* | [**get_document_content_type**](EntriesApi.md#get_document_content_type) | **HEAD** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Document/edoc | 
+*EntriesApi* | [**get_dynamic_field_values**](EntriesApi.md#get_dynamic_field_values) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/fields/GetDynamicFieldLogicValue | 
+*EntriesApi* | [**get_entry**](EntriesApi.md#get_entry) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId} | 
+*EntriesApi* | [**get_entry_listing**](EntriesApi.md#get_entry_listing) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/Laserfiche.Repository.Folder/children | 
+*EntriesApi* | [**get_field_values**](EntriesApi.md#get_field_values) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/fields | 
+*EntriesApi* | [**get_link_values_from_entry**](EntriesApi.md#get_link_values_from_entry) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/links | 
+*EntriesApi* | [**get_tags_assigned_to_entry**](EntriesApi.md#get_tags_assigned_to_entry) | **GET** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/tags | 
+*EntriesApi* | [**import_document**](EntriesApi.md#import_document) | **POST** /v1-alpha/Repositories/{repoId}/Entries/{parentEntryId}/{fileName} | 
+*EntriesApi* | [**move_or_rename_document**](EntriesApi.md#move_or_rename_document) | **PATCH** /v1-alpha/Repositories/{repoId}/Entries/{entryId} | 
+*EntriesApi* | [**write_template_value_to_entry**](EntriesApi.md#write_template_value_to_entry) | **PUT** /v1-alpha/Repositories/{repoId}/Entries/{entryId}/template | 
+*FieldDefinitionsApi* | [**get_field_definition_by_id**](FieldDefinitionsApi.md#get_field_definition_by_id) | **GET** /v1-alpha/Repositories/{repoId}/FieldDefinitions/{fieldDefinitionId} | 
+*FieldDefinitionsApi* | [**get_field_definitions**](FieldDefinitionsApi.md#get_field_definitions) | **GET** /v1-alpha/Repositories/{repoId}/FieldDefinitions | 
+*SearchesApi* | [**cancel_or_close_a_search**](SearchesApi.md#cancel_or_close_a_search) | **DELETE** /v1-alpha/Repositories/{repoId}/Searches/{searchToken} | Cancel or close an advanced search.
+*SearchesApi* | [**create_search_operation**](SearchesApi.md#create_search_operation) | **POST** /v1-alpha/Repositories/{repoId}/Searches | Run a search in the specified repository.
+*SearchesApi* | [**get_search_context_hits**](SearchesApi.md#get_search_context_hits) | **GET** /v1-alpha/Repositories/{repoId}/Searches/{searchToken}/Results/{rowNumber}/ContextHits | 
+*SearchesApi* | [**get_search_results**](SearchesApi.md#get_search_results) | **GET** /v1-alpha/Repositories/{repoId}/Searches/{searchToken}/Results | Get the search results listing of a search.
+*SearchesApi* | [**get_search_status**](SearchesApi.md#get_search_status) | **GET** /v1-alpha/Repositories/{repoId}/Searches/{searchToken} | Get the status of a search using a token.
+*SimpleSearchesApi* | [**create_simple_search_operation**](SimpleSearchesApi.md#create_simple_search_operation) | **POST** /v1-alpha/Repositories/{repoId}/SimpleSearches | 
+*TagDefinitionsApi* | [**get_tag_definition_by_id**](TagDefinitionsApi.md#get_tag_definition_by_id) | **GET** /v1-alpha/Repositories/{repoId}/TagDefinitions/{tagId} | 
+*TagDefinitionsApi* | [**get_tag_definitions**](TagDefinitionsApi.md#get_tag_definitions) | **GET** /v1-alpha/Repositories/{repoId}/TagDefinitions | 
+*TasksApi* | [**cancel_operation**](TasksApi.md#cancel_operation) | **DELETE** /v1-alpha/Repositories/{repoId}/Tasks/{operationToken} | 
+*TasksApi* | [**get_operation_status_and_progress**](TasksApi.md#get_operation_status_and_progress) | **GET** /v1-alpha/Repositories/{repoId}/Tasks/{operationToken} | 
+*TemplateDefinitionsApi* | [**get_template_definition_by_id**](TemplateDefinitionsApi.md#get_template_definition_by_id) | **GET** /v1-alpha/Repositories/{repoId}/TemplateDefinitions/{templateId} | 
+*TemplateDefinitionsApi* | [**get_template_definitions**](TemplateDefinitionsApi.md#get_template_definitions) | **GET** /v1-alpha/Repositories/{repoId}/TemplateDefinitions | 
+*TemplateDefinitionsApi* | [**get_template_field_definitions**](TemplateDefinitionsApi.md#get_template_field_definitions) | **GET** /v1-alpha/Repositories/{repoId}/TemplateDefinitions/{templateId}/fields | 
 
 ## Documentation For Models
 
- - [APIServerException](docs/APIServerException.md)
- - [AcceptedOperation](docs/AcceptedOperation.md)
- - [AdvancedSearchRequest](docs/AdvancedSearchRequest.md)
- - [Attribute](docs/Attribute.md)
- - [AuditReasons](docs/AuditReasons.md)
- - [ContextHit](docs/ContextHit.md)
- - [CopyAsyncRequest](docs/CopyAsyncRequest.md)
- - [CreateConnectionRequest](docs/CreateConnectionRequest.md)
- - [CreateEntryOperations](docs/CreateEntryOperations.md)
- - [CreateEntryResult](docs/CreateEntryResult.md)
- - [DeleteEntryWithAuditReason](docs/DeleteEntryWithAuditReason.md)
- - [Document](docs/Document.md)
- - [Edoc](docs/Edoc.md)
- - [Entry](docs/Entry.md)
- - [EntryCreate](docs/EntryCreate.md)
- - [EntryType](docs/EntryType.md)
- - [FieldToUpdate](docs/FieldToUpdate.md)
- - [FieldValue](docs/FieldValue.md)
- - [Folder](docs/Folder.md)
- - [FuzzyType](docs/FuzzyType.md)
- - [GetDynamicFieldLogicValueRequest](docs/GetDynamicFieldLogicValueRequest.md)
- - [GetEdocWithAuditReasonRequest](docs/GetEdocWithAuditReasonRequest.md)
- - [HitType](docs/HitType.md)
- - [LFColor](docs/LFColor.md)
- - [LinkToUpdate](docs/LinkToUpdate.md)
- - [ODataActionParameters](docs/ODataActionParameters.md)
- - [ODataValueOfBoolean](docs/ODataValueOfBoolean.md)
- - [ODataValueOfDateTime](docs/ODataValueOfDateTime.md)
- - [ODataValueOfIListOfContextHit](docs/ODataValueOfIListOfContextHit.md)
- - [ODataValueOfIListOfEntry](docs/ODataValueOfIListOfEntry.md)
- - [ODataValueOfIListOfFieldValue](docs/ODataValueOfIListOfFieldValue.md)
- - [ODataValueOfIListOfTemplateFieldInfo](docs/ODataValueOfIListOfTemplateFieldInfo.md)
- - [ODataValueOfIListOfWEntryLinkInfo](docs/ODataValueOfIListOfWEntryLinkInfo.md)
- - [ODataValueOfIListOfWFieldInfo](docs/ODataValueOfIListOfWFieldInfo.md)
- - [ODataValueOfIListOfWTagInfo](docs/ODataValueOfIListOfWTagInfo.md)
- - [ODataValueOfIListOfWTemplateInfo](docs/ODataValueOfIListOfWTemplateInfo.md)
- - [ODataValueOfListOfAttribute](docs/ODataValueOfListOfAttribute.md)
- - [OneOfAdvancedSearchRequestFuzzyType](docs/OneOfAdvancedSearchRequestFuzzyType.md)
- - [OneOfEntryEntryType](docs/OneOfEntryEntryType.md)
- - [OneOfFieldValueFieldType](docs/OneOfFieldValueFieldType.md)
- - [OneOfPostEntryChildrenRequestEntryType](docs/OneOfPostEntryChildrenRequestEntryType.md)
- - [OneOfWFieldInfoFieldType](docs/OneOfWFieldInfoFieldType.md)
- - [OneOfWFieldInfoFormat](docs/OneOfWFieldInfoFormat.md)
- - [OneOfWTagInfoWatermark](docs/OneOfWTagInfoWatermark.md)
- - [OneOfWTemplateInfoColor](docs/OneOfWTemplateInfoColor.md)
- - [OneOfWatermarkWatermarkPosition](docs/OneOfWatermarkWatermarkPosition.md)
- - [OperationErrorItem](docs/OperationErrorItem.md)
- - [OperationProgress](docs/OperationProgress.md)
- - [OperationStatus](docs/OperationStatus.md)
- - [ParentEntryIdFileNameBody](docs/ParentEntryIdFileNameBody.md)
- - [PatchEntryRequest](docs/PatchEntryRequest.md)
- - [PostEntryChildrenRequest](docs/PostEntryChildrenRequest.md)
- - [PostEntryWithEdocMetadataRequest](docs/PostEntryWithEdocMetadataRequest.md)
- - [PutFieldValsRequest](docs/PutFieldValsRequest.md)
- - [PutLinksRequest](docs/PutLinksRequest.md)
- - [PutTagRequest](docs/PutTagRequest.md)
- - [PutTemplateRequest](docs/PutTemplateRequest.md)
- - [Rule](docs/Rule.md)
- - [SessionKeyInfo](docs/SessionKeyInfo.md)
- - [SetEdoc](docs/SetEdoc.md)
- - [SetFields](docs/SetFields.md)
- - [SetLinks](docs/SetLinks.md)
- - [SetTags](docs/SetTags.md)
- - [SetTemplate](docs/SetTemplate.md)
- - [Shortcut](docs/Shortcut.md)
- - [SimpleSearchRequest](docs/SimpleSearchRequest.md)
- - [TemplateFieldInfo](docs/TemplateFieldInfo.md)
- - [ValueToUpdate](docs/ValueToUpdate.md)
- - [WAuditReason](docs/WAuditReason.md)
- - [WEntryLinkInfo](docs/WEntryLinkInfo.md)
- - [WFieldFormat](docs/WFieldFormat.md)
- - [WFieldInfo](docs/WFieldInfo.md)
- - [WFieldType](docs/WFieldType.md)
- - [WTagInfo](docs/WTagInfo.md)
- - [WTemplateInfo](docs/WTemplateInfo.md)
- - [Watermark](docs/Watermark.md)
- - [WatermarkPosition](docs/WatermarkPosition.md)
+ - [APIServerException](APIServerException.md)
+ - [AcceptedOperation](AcceptedOperation.md)
+ - [AdvancedSearchRequest](AdvancedSearchRequest.md)
+ - [Attribute](Attribute.md)
+ - [AuditReasons](AuditReasons.md)
+ - [ContextHit](ContextHit.md)
+ - [CopyAsyncRequest](CopyAsyncRequest.md)
+ - [CreateConnectionRequest](CreateConnectionRequest.md)
+ - [CreateEntryOperations](CreateEntryOperations.md)
+ - [CreateEntryResult](CreateEntryResult.md)
+ - [DeleteEntryWithAuditReason](DeleteEntryWithAuditReason.md)
+ - [Document](Document.md)
+ - [Edoc](Edoc.md)
+ - [Entry](Entry.md)
+ - [EntryCreate](EntryCreate.md)
+ - [EntryType](EntryType.md)
+ - [FieldToUpdate](FieldToUpdate.md)
+ - [FieldValue](FieldValue.md)
+ - [Folder](Folder.md)
+ - [FuzzyType](FuzzyType.md)
+ - [GetDynamicFieldLogicValueRequest](GetDynamicFieldLogicValueRequest.md)
+ - [GetEdocWithAuditReasonRequest](GetEdocWithAuditReasonRequest.md)
+ - [HitType](HitType.md)
+ - [LFColor](LFColor.md)
+ - [LinkToUpdate](LinkToUpdate.md)
+ - [ODataActionParameters](ODataActionParameters.md)
+ - [ODataValueOfBoolean](ODataValueOfBoolean.md)
+ - [ODataValueOfDateTime](ODataValueOfDateTime.md)
+ - [ODataValueOfIListOfContextHit](ODataValueOfIListOfContextHit.md)
+ - [ODataValueOfIListOfEntry](ODataValueOfIListOfEntry.md)
+ - [ODataValueOfIListOfFieldValue](ODataValueOfIListOfFieldValue.md)
+ - [ODataValueOfIListOfTemplateFieldInfo](ODataValueOfIListOfTemplateFieldInfo.md)
+ - [ODataValueOfIListOfWEntryLinkInfo](ODataValueOfIListOfWEntryLinkInfo.md)
+ - [ODataValueOfIListOfWFieldInfo](ODataValueOfIListOfWFieldInfo.md)
+ - [ODataValueOfIListOfWTagInfo](ODataValueOfIListOfWTagInfo.md)
+ - [ODataValueOfIListOfWTemplateInfo](ODataValueOfIListOfWTemplateInfo.md)
+ - [ODataValueOfListOfAttribute](ODataValueOfListOfAttribute.md)
+ - [OneOfAdvancedSearchRequestFuzzyType](OneOfAdvancedSearchRequestFuzzyType.md)
+ - [OneOfEntryEntryType](OneOfEntryEntryType.md)
+ - [OneOfFieldValueFieldType](OneOfFieldValueFieldType.md)
+ - [OneOfPostEntryChildrenRequestEntryType](OneOfPostEntryChildrenRequestEntryType.md)
+ - [OneOfWFieldInfoFieldType](OneOfWFieldInfoFieldType.md)
+ - [OneOfWFieldInfoFormat](OneOfWFieldInfoFormat.md)
+ - [OneOfWTagInfoWatermark](OneOfWTagInfoWatermark.md)
+ - [OneOfWTemplateInfoColor](OneOfWTemplateInfoColor.md)
+ - [OneOfWatermarkWatermarkPosition](OneOfWatermarkWatermarkPosition.md)
+ - [OperationErrorItem](OperationErrorItem.md)
+ - [OperationProgress](OperationProgress.md)
+ - [OperationStatus](OperationStatus.md)
+ - [ParentEntryIdFileNameBody](ParentEntryIdFileNameBody.md)
+ - [PatchEntryRequest](PatchEntryRequest.md)
+ - [PostEntryChildrenRequest](PostEntryChildrenRequest.md)
+ - [PostEntryWithEdocMetadataRequest](PostEntryWithEdocMetadataRequest.md)
+ - [PutFieldValsRequest](PutFieldValsRequest.md)
+ - [PutLinksRequest](PutLinksRequest.md)
+ - [PutTagRequest](PutTagRequest.md)
+ - [PutTemplateRequest](PutTemplateRequest.md)
+ - [Rule](Rule.md)
+ - [SessionKeyInfo](SessionKeyInfo.md)
+ - [SetEdoc](SetEdoc.md)
+ - [SetFields](SetFields.md)
+ - [SetLinks](SetLinks.md)
+ - [SetTags](SetTags.md)
+ - [SetTemplate](SetTemplate.md)
+ - [Shortcut](Shortcut.md)
+ - [SimpleSearchRequest](SimpleSearchRequest.md)
+ - [TemplateFieldInfo](TemplateFieldInfo.md)
+ - [ValueToUpdate](ValueToUpdate.md)
+ - [WAuditReason](WAuditReason.md)
+ - [WEntryLinkInfo](WEntryLinkInfo.md)
+ - [WFieldFormat](WFieldFormat.md)
+ - [WFieldInfo](WFieldInfo.md)
+ - [WFieldType](WFieldType.md)
+ - [WTagInfo](WTagInfo.md)
+ - [WTemplateInfo](WTemplateInfo.md)
+ - [Watermark](Watermark.md)
+ - [WatermarkPosition](WatermarkPosition.md)
 
 ## Documentation For Authorization
 

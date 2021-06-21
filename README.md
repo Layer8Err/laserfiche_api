@@ -5,6 +5,7 @@ Swagger-Codegen auto-generated Laserfiche Cloud API SDK created from swagger.jso
 
 * [Laserfiche API](https://api.laserfiche.com/repository/swagger/index.html)
 * [Swagger Codegen](https://swagger.io/tools/swagger-codegen/)
+* [Auto-generated docs](/docs/README.md)
 
 # Build info
 

@@ -39,6 +39,9 @@ jobs:
       
     - name: Move PyPi docs to laserfiche-api folder
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
+
+    - name: Fixup auto-generated README.md for laserfiche-api docs
+      run: sed -i 's/(docs\//(/g' /tmp/README.md && sed -i 's/GIT_USER_ID/Layer8Err/g' /tmp/README.md && sed -i 's/GIT_REPO_ID/laserfiche_api/g' /tmp/README.md
       
     - name: Move API Source code to laserfiche-api folder
       run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/. && cp -rf /tmp/README.md $GITHUB_WORKSPACE/docs/.
