@@ -60,9 +60,9 @@ jobs:
 
     - name: Set Vars for release artifact
       run: |
-        echo "DIST_PATH=$( ls -d -1 $GITHUB_WORKSPACE/dist/laserfiche_api-*.tar.gz )" >> $GITHUB_ENV &&
-        echo "DIST_NAME=$( basename ${{ env.DIST_PATH }})" >> $GITHUB_ENV &&
-        echo "UPLOAD_URL=https://github.com/Layer8Err/laserfiche_api/tree/main/dist/${{ env.DIST_NAME }}" >> $GITHUB_ENV
+        DIST_PATH=$( ls -d -1 $GITHUB_WORKSPACE/dist/laserfiche_api-*.tar.gz ) && echo "DIST_PATH=$DIST_PATH" >> $GITHUB_ENV &&
+        DIST_NAME=$( basename $DIST_PATH ) && echo "DIST_NAME=$DIST_NAME" >> $GITHUB_ENV &&
+        UPLOAD_URL=https://github.com/Layer8Err/laserfiche_api/tree/main/dist/$DIST_NAME && echo "UPLOAD_URL=$UPLOAD_URL" >> $GITHUB_ENV
 
     - name: Upload release artifact
       uses: actions/upload-release-asset@v1
