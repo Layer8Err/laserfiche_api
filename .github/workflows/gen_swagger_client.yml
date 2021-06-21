@@ -71,7 +71,7 @@ jobs:
         draft: false
         prerelease: false
         release_name: ${{ env.VERSION }}
-        tag_name: ${{ github.ref }}
+        tag_name: ${{ env.VERSION }}
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
