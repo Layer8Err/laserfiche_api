@@ -45,10 +45,11 @@ jobs:
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
 
     - name: Fixup auto-generated README.md for laserfiche-api docs
-      run: cd /tmp && sudo sed -i 's/(docs\//(/g' README.md && sudo sed -i 's/GIT_USER_ID/Layer8Err/g' README.md && sudo sed -i 's/GIT_REPO_ID/laserfiche_api/g' README.md && export VERSION=${{ env.VERSION }} && sudo sed -i s/1.0.0/${{ env.VERSION}}/g README.md
+      run: cd /tmp && sudo sed -i 's/GIT_USER_ID/Layer8Err/g' README.md && sudo sed -i 's/GIT_REPO_ID/laserfiche_api/g' README.md && export VERSION=${{ env.VERSION }} && sudo sed -i s/1.0.0/${{ env.VERSION}}/g README.md
 
     - name: Move API Source code to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/. && cp -rf /tmp/README.md $GITHUB_WORKSPACE/docs/.
+      run: |
+        cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/. && cp -f $GITHUB_WORKSPACE/API_GEN/README-main.md $GITHUB_WORKSPACE/README.md && cat /tmp/README.md >> $GITHUB_WORKSPACE/README.md
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
