@@ -64,17 +64,6 @@ jobs:
         DIST_NAME=$( basename $DIST_PATH ) && echo "DIST_NAME=$DIST_NAME" >> $GITHUB_ENV &&
         UPLOAD_URL=https://github.com/Layer8Err/laserfiche_api/tree/main/dist/$DIST_NAME && echo "UPLOAD_URL=$UPLOAD_URL" >> $GITHUB_ENV
 
-    - name: Upload release artifact
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        VERSION: ${{ env.VERSION }}
-      with:
-        upload_url: ${{ env.UPLOAD_URL }}
-        asset_path: ${{ env.DIST_PATH }}
-        asset_name: ${{ env.DIST_NAME }}
-        asset_content_type: application/gzip
-
     - name: Create release
       uses: actions/create-release@v1
       id: create_release
@@ -85,6 +74,16 @@ jobs:
         tag_name: ${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    - name: Upload release artifact
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ env.DIST_PATH }}
+        asset_name: ${{ env.DIST_NAME }}
+        asset_content_type: application/gzip
         
     - uses: actions-x/commit@v2
       name: Commit new PyPi distro package
