@@ -45,7 +45,7 @@ jobs:
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
 
     - name: Fixup auto-generated README.md for laserfiche-api docs
-      run: cd /tmp && sudo sed -i 's/(docs\//(/g' README.md && sudo sed -i 's/GIT_USER_ID/Layer8Err/g' README.md && sudo sed -i 's/GIT_REPO_ID/laserfiche_api/g' README.md && sudo sed -i s/1.0.0/$VERSION/g README.md
+      run: cd /tmp && sudo sed -i 's/(docs\//(/g' README.md && sudo sed -i 's/GIT_USER_ID/Layer8Err/g' README.md && sudo sed -i 's/GIT_REPO_ID/laserfiche_api/g' README.md && sudo sed -i s/1.0.0/${{ env.VERSION }}/g README.md
       env:
         VERSION: ${{ env.VERSION }}
 
