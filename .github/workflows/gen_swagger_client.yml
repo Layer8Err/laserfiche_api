@@ -31,12 +31,12 @@ jobs:
     - name: Prep /dist folder
       run: rm $GITHUB_WORKSPACE/dist/*.tar.gz && cp /tmp/laserfiche_api/dist/*.tar.gz $GITHUB_WORKSPACE/dist/.
 
-#     - uses: actions/upload-artifact@v2
-#       name: Save PyPi distro artifact
-#       with: 
-#         name: laserfiche-api
-#         path: /tmp/laserfiche-api/dist/laserfiche-api*.tar.gz
-#         if-no-files-found: error
+    - uses: actions/upload-artifact@v2
+      name: Save PyPi distro artifact
+      with: 
+        name: laserfiche_api
+        path: /tmp/laserfiche_api/dist/laserfiche*api*.tar.gz
+        if-no-files-found: error
         
     - name: Move PyPi package to expected location
       run: mv /tmp/laserfiche_api/dist/laserfiche*api*.tar.gz $GITHUB_WORKSPACE/dist/.
@@ -56,6 +56,17 @@ jobs:
       env:
         GH_EMAIL: ${{ secrets.GH_EMAIL }}
         GH_USER: ${{ secrets.GH_USER }}
+
+    - name: Create release
+      uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: false
+        release_name: ${{ env.VERSION }}
+        tag_name: ${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         
     - uses: actions-x/commit@v2
       name: Commit new PyPi distro package
