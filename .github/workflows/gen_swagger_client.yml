@@ -23,7 +23,7 @@ jobs:
 
     - name: Set VERSION from setup.py
       run: |
-        echo ::set-env name=VERSION::$( cat $GITHUB_WORKSPACE/API_GEN/setup.py | grep "VERSION =" | sed -e 's/ //g' | cut -d "=" -f2 )
+        echo ::set-output name=VERSION::$( cat $GITHUB_WORKSPACE/API_GEN/setup.py | grep "VERSION =" | sed -e 's/ //g' | cut -d "=" -f2 )
 
     - name: Create PyPi distro
       run: cd /tmp/laserfiche_api && python setup.py sdist
