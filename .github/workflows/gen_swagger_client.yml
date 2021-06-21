@@ -58,15 +58,21 @@ jobs:
         GH_EMAIL: ${{ secrets.GH_EMAIL }}
         GH_USER: ${{ secrets.GH_USER }}
 
+    - name: Set Vars for release artifact
+      run: |
+        echo "DIST_PATH=$( ls -d -1 $GITHUB_WORKSPACE/dist/laserfiche_api-*.tar.gz )" >> $GITHUB_ENV &&
+        echo "DIST_NAME=$( basename ${{ env.DIST_PATH }})" >> $GITHUB_ENV &&
+        echo "UPLOAD_URL=https://github.com/Layer8Err/laserfiche_api/tree/main/dist/${{ env.DIST_NAME }}" >> $GITHUB_ENV
+
     - name: Upload release artifact
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         VERSION: ${{ env.VERSION }}
       with:
-        upload_url: https://github.com/Layer8Err/laserfiche_api/tree/main/dist/laserfiche_api-$VERSION.tar.gz
-        asset_path: $GITHUB_WORKSPACE/dist/laserfiche_api-$VERSION.tar.gz
-        asset_name: laserfiche_api-$VERSION.tar.gz
+        upload_url: ${{ env.UPLOAD_URL }}
+        asset_path: ${{ env.DIST_PATH }}
+        asset_name: ${{ env.DIST_NAME }}
         asset_content_type: application/gzip
 
     - name: Create release
