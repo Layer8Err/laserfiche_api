@@ -41,7 +41,7 @@ jobs:
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
       
     - name: Move API Source code to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/laserfiche_api/.
+      run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/laserfiche_api
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
