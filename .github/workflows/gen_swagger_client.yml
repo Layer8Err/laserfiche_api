@@ -62,10 +62,11 @@ jobs:
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        VERSION: ${{ env.VERSION }}
       with:
-        upload_url: https://github.com/Layer8Err/laserfiche_api/tree/main/dist/laserfiche_api-${{ env.VERSION }}.tar.gz
-        asset_path: $GITHUB_WORKSPACE/dist/laserfiche_api-${{ env.VERSION }}.tar.gz
-        asset_name: laserfiche_api-${{ env.VERSION }}.tar.gz
+        upload_url: https://github.com/Layer8Err/laserfiche_api/tree/main/dist/laserfiche_api-$VERSION.tar.gz
+        asset_path: $GITHUB_WORKSPACE/dist/laserfiche_api-$VERSION.tar.gz
+        asset_name: laserfiche_api-$VERSION.tar.gz
         asset_content_type: application/gzip
 
     - name: Create release
