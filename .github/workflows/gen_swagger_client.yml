@@ -19,7 +19,7 @@ jobs:
       run: docker run -v /API_GEN:/local swaggerapi/swagger-codegen-cli-v3 generate -i 'https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json' --http-user-agent "Chrome/91.0.4472.106" -l python -o /local/laserfiche_api -DpackageName=laserfiche_api
    
     - name: Copy over setup.py
-      run: sudo cp -f $GITHUB_WORKSPACE/API_GEN/setup.py /API_GEN/laserfiche_api/setup.py && sudo cp -f $GITHUB_WORKSPACE/API_GEN/README.md /API_GEN/laserfiche_api/README.md && cp -r /API_GEN/laserfiche_api /tmp/laserfiche_api
+      run: sudo cp -f $GITHUB_WORKSPACE/API_GEN/setup.py /API_GEN/laserfiche_api/setup.py && sudo cp -f /API_GEN/laserfiche_api/README.md /tmp/README.md && sudo cp -f $GITHUB_WORKSPACE/API_GEN/README.md /API_GEN/laserfiche_api/README.md && cp -r /API_GEN/laserfiche_api /tmp/laserfiche_api
 
     - name: Create PyPi distro
       run: cd /tmp/laserfiche_api && python setup.py sdist
@@ -41,7 +41,7 @@ jobs:
       run: cp -rf /tmp/laserfiche_api/docs/. $GITHUB_WORKSPACE/docs/.
       
     - name: Move API Source code to laserfiche-api folder
-      run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/. && cp -rf /tmp/laserfiche_api/README.md $GITHUB_WORKSPACE/docs/.
+      run: cp -rf /tmp/laserfiche_api/laserfiche_api $GITHUB_WORKSPACE/. && cp -rf /tmp/README.md $GITHUB_WORKSPACE/docs/.
       
     - name: Commit dist updates to main
       run: git config --global user.email ${GH_EMAIL} && git config --global user.name ${GH_USER} && git add -f . && git commit -m "GitHub action updated PyPi dist"
