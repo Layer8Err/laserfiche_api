@@ -7,7 +7,7 @@ SWGSPEC='https://api.laserfiche.com/repository/swagger/v1-alpha/swagger.json'
 USRAGT='Chrome/91.0.4472.106'
 LFAPI=${PWD}/laserfiche-api
 OPWD=${PWD}
-TGTVER='1.0.2'
+TGTVER='1.0.9'
 
 if [ -d "$LFAPI" ]; then
     echo "$LFAPI folder exists. Cleaning up before rebuilding..."
