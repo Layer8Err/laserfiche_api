@@ -3,7 +3,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -44,6 +44,7 @@ class TagDefinitionsApi(object):
         :param async_req bool
         :param str repo_id: The requested repository ID. (required)
         :param int tag_id: The requested tag definition ID. (required)
+        :param str select: Limits the properties returned in the result.
         :return: WTagInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -67,12 +68,13 @@ class TagDefinitionsApi(object):
         :param async_req bool
         :param str repo_id: The requested repository ID. (required)
         :param int tag_id: The requested tag definition ID. (required)
+        :param str select: Limits the properties returned in the result.
         :return: WTagInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo_id', 'tag_id']  # noqa: E501
+        all_params = ['repo_id', 'tag_id', 'select']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -105,6 +107,8 @@ class TagDefinitionsApi(object):
             path_params['tagId'] = params['tag_id']  # noqa: E501
 
         query_params = []
+        if 'select' in params:
+            query_params.append(('$select', params['select']))  # noqa: E501
 
         header_params = {}
 

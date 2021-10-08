@@ -3,7 +3,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -47,7 +47,7 @@ class Entry(object):
         'tags': 'list[WTagInfo]',
         'links': 'list[WEntryLinkInfo]',
         'row_number': 'int',
-        'properties': 'dict(str, Object)'
+        'properties': 'dict(str, object)'
     }
 
     attribute_map = {
@@ -580,7 +580,7 @@ class Entry(object):
 
 
         :return: The properties of this Entry.  # noqa: E501
-        :rtype: dict(str, Object)
+        :rtype: dict(str, object)
         """
         return self._properties
 
@@ -590,7 +590,7 @@ class Entry(object):
 
 
         :param properties: The properties of this Entry.  # noqa: E501
-        :type: dict(str, Object)
+        :type: dict(str, object)
         """
 
         self._properties = properties

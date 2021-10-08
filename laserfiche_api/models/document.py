@@ -3,7 +3,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -37,7 +37,7 @@ class Document(Entry):
         'page_count': 'int',
         'is_checked_out': 'bool',
         'is_under_version_control': 'bool',
-        'edoc': 'Object'
+        'edoc': 'object'
     }
     if hasattr(Entry, "swagger_types"):
         swagger_types.update(Entry.swagger_types)
@@ -279,7 +279,7 @@ class Document(Entry):
         The electronic document attached to the represented document.  # noqa: E501
 
         :return: The edoc of this Document.  # noqa: E501
-        :rtype: Object
+        :rtype: object
         """
         return self._edoc
 
@@ -290,7 +290,7 @@ class Document(Entry):
         The electronic document attached to the represented document.  # noqa: E501
 
         :param edoc: The edoc of this Document.  # noqa: E501
-        :type: Object
+        :type: object
         """
 
         self._edoc = edoc

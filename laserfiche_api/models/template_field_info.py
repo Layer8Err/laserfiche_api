@@ -3,7 +3,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -29,7 +29,7 @@ class TemplateFieldInfo(WFieldInfo):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rule': 'Object',
+        'rule': 'object',
         'group_id': 'int',
         'group_name': 'str'
     }
@@ -65,7 +65,7 @@ class TemplateFieldInfo(WFieldInfo):
         A form logic rule associated with a Laserfiche template and field definition.  # noqa: E501
 
         :return: The rule of this TemplateFieldInfo.  # noqa: E501
-        :rtype: Object
+        :rtype: object
         """
         return self._rule
 
@@ -76,7 +76,7 @@ class TemplateFieldInfo(WFieldInfo):
         A form logic rule associated with a Laserfiche template and field definition.  # noqa: E501
 
         :param rule: The rule of this TemplateFieldInfo.  # noqa: E501
-        :type: Object
+        :type: object
         """
 
         self._rule = rule

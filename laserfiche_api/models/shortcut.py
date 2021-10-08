@@ -3,7 +3,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -31,7 +31,7 @@ class Shortcut(Entry):
     swagger_types = {
         'target_id': 'int',
         'extension': 'str',
-        'target_type': 'Object'
+        'target_type': 'object'
     }
     if hasattr(Entry, "swagger_types"):
         swagger_types.update(Entry.swagger_types)
@@ -111,7 +111,7 @@ class Shortcut(Entry):
         The entry type of the shortcut target.  # noqa: E501
 
         :return: The target_type of this Shortcut.  # noqa: E501
-        :rtype: Object
+        :rtype: object
         """
         return self._target_type
 
@@ -122,7 +122,7 @@ class Shortcut(Entry):
         The entry type of the shortcut target.  # noqa: E501
 
         :param target_type: The target_type of this Shortcut.  # noqa: E501
-        :type: Object
+        :type: object
         """
 
         self._target_type = target_type

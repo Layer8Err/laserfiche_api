@@ -3,7 +3,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -29,7 +29,7 @@ class FieldValue(object):
     """
     swagger_types = {
         'field_name': 'str',
-        'values': 'list[dict(str, Object)]',
+        'values': 'list[dict(str, object)]',
         'field_type': 'OneOfFieldValueFieldType',
         'group_id': 'int',
         'field_id': 'int',
@@ -102,7 +102,7 @@ class FieldValue(object):
         The values assigned to the field.  # noqa: E501
 
         :return: The values of this FieldValue.  # noqa: E501
-        :rtype: list[dict(str, Object)]
+        :rtype: list[dict(str, object)]
         """
         return self._values
 
@@ -113,7 +113,7 @@ class FieldValue(object):
         The values assigned to the field.  # noqa: E501
 
         :param values: The values of this FieldValue.  # noqa: E501
-        :type: list[dict(str, Object)]
+        :type: list[dict(str, object)]
         """
 
         self._values = values

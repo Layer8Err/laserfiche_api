@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **creator** | **str** | The name of the user that created this entry. | [optional] 
 **creation_time** | **datetime** | The creation time of the entry. | [optional] 
 **last_modified_time** | **datetime** | The last modification time of the entry. | [optional] 
-**entry_type** | [**OneOfEntryEntryType**](OneOfEntryEntryType.md) | The type of the entry. | [optional] 
+**entry_type** | **OneOfEntryEntryType** | The type of the entry. | [optional] 
 **is_container** | **bool** | A boolean indicating if this entry is a container object; it can have other entries as children. | [optional] 
 **is_leaf** | **bool** | A boolean indicating if this entry is a leaf object; it cannot have other entries as children. | [optional] 
 **template_name** | **str** | The name of the template assigned to this entry. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **tags** | [**list[WTagInfo]**](WTagInfo.md) | The tags assigned to this entry. | [optional] 
 **links** | [**list[WEntryLinkInfo]**](WEntryLinkInfo.md) | The links assigned to this entry. | [optional] 
 **row_number** | **int** | Row number assigned to this entry in the listing. | [optional] 
-**properties** | [**dict(str, Object)**](Object.md) |  | [optional] 
+**properties** | **dict(str, object)** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

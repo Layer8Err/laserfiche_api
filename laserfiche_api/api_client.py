@@ -2,7 +2,7 @@
 """
     Laserfiche API
 
-    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>561590</p>  # noqa: E501
+    Welcome to the Laserfiche API Swagger Playground. You can try out any of our API calls against your live Laserfiche Cloud account. Visit the developer center for more details: <a href=\"https://developer.laserfiche.com\">https://developer.laserfiche.com</a><p><strong>Build# : </strong>650780</p>  # noqa: E501
 
     OpenAPI spec version: 1-alpha
     
@@ -523,10 +523,14 @@ class ApiClient(object):
             filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
                                  content_disposition).group(1)
             path = os.path.join(os.path.dirname(path), filename)
-
-        with open(path, "wb") as f:
-            f.write(response.data)
-
+            response_data = response.data
+            with open(path, "wb") as f:
+                if isinstance(response_data, str):
+                    # change str to bytes so we can write it
+                    response_data = response_data.encode('utf-8')
+                    f.write(response_data)
+                else:
+                    f.write(response_data)
         return path
 
     def __deserialize_primitive(self, data, klass):
